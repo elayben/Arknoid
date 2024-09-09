@@ -10,7 +10,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="biuoop-1.4" level="project" />
-    <orderEntry type="library" name="checkstyle-8.44-all" level="project" />
+    <orderEntry type="library" exported="" name="biuoop-1.4" level="project" />
+    <orderEntry type="library" exported="" name="checkstyle-8.44-all" level="project" />
   </component>
 </module>

@@ -11,23 +11,37 @@ import java.awt.Color;
 public class BGDirectHit implements Sprite {
     @Override
     public void drawOn(DrawSurface d) {
+        // Draw a subtle gradient-like background using alternating rectangles
+        for (int i = 0; i < 580; i += 20) {
+            if (i % 40 == 0) {
+                d.setColor(new Color(30, 30, 30));
+            } else {
+                d.setColor(new Color(45, 45, 45));
+            }
+            d.fillRectangle(20, 20 + i, 760, 20);
+        }
+
         d.setColor(Color.BLACK);
-        d.drawRectangle(20, 20, 760, 580);
-        d.fillRectangle(20, 20, 760, 580);
-        d.drawText(700, 19, "Direct Hit", 17);
-        d.setColor(Color.blue);
-        d.drawCircle(400, 110, 40);
-        d.drawCircle(400, 110, 50);
-        d.drawCircle(400, 110, 60);
-        d.drawLine(400, 20, 400, 240);
-        d.drawLine(300, 110, 520, 110);
-        d.setColor(Color.red);
-        d.drawRectangle(395, 100, 10, 10);
-        d.fillRectangle(395, 100, 10, 10);
+        d.drawText(700, 19, "Direct Hit", 20);
+
+        // Lower the glowing circles
+        d.setColor(new Color(0, 100, 255));
+        d.drawCircle(400, 160, 40);
+        d.setColor(new Color(0, 150, 255));
+        d.drawCircle(400, 160, 50);
+        d.setColor(new Color(0, 200, 255));
+        d.drawCircle(400, 160, 60);
+
+        // Lower the glowing lines
+        d.setColor(new Color(0, 150, 255));
+        d.drawLine(400, 70, 400, 290);
+        d.drawLine(300, 160, 520, 160);
+
+        d.setColor(Color.RED); // Original rectangle color
+        d.fillRectangle(395, 150, 10, 10);
     }
 
     @Override
     public void timePassed() {
-
     }
 }
