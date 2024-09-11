@@ -1,4 +1,4 @@
-# Arkanoid Game
+# Arkanoid Game🕹️
 
 ## Overview
 A custom implementation of the classic **Arkanoid** game where the player controls a paddle to bounce a ball and break blocks. The game features multiple levels, each with unique designs and dynamic backgrounds.
