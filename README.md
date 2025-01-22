@@ -42,7 +42,7 @@ A custom implementation of the classic **Arkanoid** game where the player contro
 ## How to Run
 1. Clone the repository:
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/elayben/Arknoid.git
     ```
 2. Open in your preferred Java IDE.
 3. Run the game!
