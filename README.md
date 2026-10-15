@@ -22,7 +22,7 @@ A custom implementation of the classic **Arkanoid** game where the player contro
 - **Single Red Block** at the center.
 - **Background**: Glowing circles and lines.
   
-![Direct Hit](pictures/directHitPic)
+![Direct Hit](pictures/directHitPic.png)
 
 
 ### Wide Easy
@@ -30,20 +30,40 @@ A custom implementation of the classic **Arkanoid** game where the player contro
 - **Wide Paddle** and colorful blocks.
 - **Background**: Sky theme with sun and clouds.
   
-![Wide Easy](pictures/wideEasyPic)
+![Wide Easy](pictures/wideEasyPic.png)
 
 ### Green 3
 - **Standard Paddle** and tower-shaped blocks.
 - **Background**: Green-themed with geometric shapes.
   
-![Green 3](pictures/green3Pic)
+![Green 3](pictures/green3Pic.png)
 
 
 ## How to Run
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/elayben/Arknoid.git
-    ```
-2. Open in your preferred Java IDE.
-3. Run the game!
 
+**Prerequisites:** Java 8+ and [Apache Ant](https://ant.apache.org/). The graphics library (`biuoop-1.4.jar`) is included in the repo.
+
+```bash
+git clone https://github.com/elayben/Arknoid.git
+cd Arknoid
+ant run -Dargs="1 2 3"   # compile and play all three levels in order
+ant run -Dargs="3 1"     # pick any levels, in any order
+```
+
+Levels: `1` Direct Hit · `2` Wide Easy · `3` Green 3
+
+## Project Structure
+
+```
+src/
+├── Ass6Game.java          # Entry point: parses level args, starts the game flow
+├── Environment/           # Game loop, animations, collisions, listeners, score
+├── GeometryPrimitives/    # Point, Line, Rectangle
+├── Levels/                # Level definitions and their backgrounds
+├── Movement/              # Velocity and collision info
+└── Objects/               # Ball, Block, Paddle and other sprites
+```
+
+## Design
+
+Built for the Object-Oriented Programming course at Bar-Ilan University, with an emphasis on clean OOP design: interfaces for `Sprite`, `Collidable` and `Animation`, the **Observer** pattern for hit events (`HitListener` / `HitNotifier`), and a pluggable `LevelInformation` interface so new levels need no changes to the engine. The code follows the course Checkstyle rules (`ant check`).
